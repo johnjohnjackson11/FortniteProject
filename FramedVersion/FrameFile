@@ -1,0 +1,146 @@
+package jsoup;
+
+import java.util.ArrayList;
+
+import java.util.Hashtable;
+import org.jsoup.Jsoup;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+
+import org.jsoup.nodes.Document;
+import org.jsoup.parser.Parser;
+import org.jsoup.select.Elements;
+
+public class PlayerStats {
+	
+  // name is optional If you wanna include players real name
+  public String name;
+  
+  //url will be url = "https://stormshield.one/pvp/stats/" + ID;
+  public String url;
+	public String ID;
+  
+ 
+  /*
+  Create HashTable
+  Hashtable Key should be a statName(String) and Value should be statValue(Double)   
+  it Should be filled by a method-- ex. Hashtable yourHashTable = fillStatTable(yourUrl)
+	*/
+  
+  
+  //Create static ArrayList playerList that holds all PlayerStats objects
+  //when PlayerStats object is created add it to playerList
+  
+  
+	public PlayerStats(String yourID){
+    //Constructor that takes in Epic ID and concatenates with the String "https://stormshield.one/pvp/stats/"
+ 
+  }
+  
+  // Create static Array with Specific Stat Names for easier searches
+  // RECOMMENDED THAT STATNAMES USE UNDERSCORES INSTEAD OF SPACES IF YOU PLAN TO USE MySQL
+
+	/*Create a method fillStatTable that returns a Hashtable of stats
+    constructor will have Hashtable<String, Double> statsTable = fillStatTable
+    this method will use Jsoup to get all your data
+    
+    YOU WILL NEED TO LEARN A LITTLE JSOUP AND WHAT DIVS AND ELEMENTS ARE IN HTML
+    
+  */ 
+   /*static Hashtable<String, Double> fillStatTable(String yourUrl) {
+		  //Hashtable<String, Double> statTable = new Hashtable<String, Double>();
+		
+		  //I initialized an ArrayList to store statValues
+      
+      /*connect Jsoup to url
+        use inspect element to get div Tags for the stats you want. 
+        
+        ****I only used the first 20 stats****
+        select the divs you want to store in your Elements values
+       
+        *Its Suggested to print out the list of statNames and statValue Elements so you can test them to see which
+        stats you want*
+      
+      */
+        
+		
+			//Loop thru values convert to Strings
+			//OwnText is used to convert Elements to Strings
+			//Need to remove percentage signs from values to parse statValues to doubles
+			
+		  //return Hashtable
+		
+	
+	}
+  
+	//Create method to convert date to yyyy-mm-dd format for sql storage
+	
+  
+  
+  /*Create Method to send stats to MySQL
+     columns should be something like: ID--Date--Stat1--Stat2--Stat3--Etc
+ 
+	public static void statsToMySql() {
+		try {
+			String driver = "com.mysql.jdbc.Driver";
+			String url= "jdbc:mysql://localhost:3306/SCHEMA-NAME";
+			String username = "yourUserName";
+			String password = "yourPassword";
+			Class.forName(driver);
+			
+			Connection con = DriverManager.getConnection(url,username,password);
+			
+      
+      //Test connection by putting print Statment here
+      
+			//For all the objects in your playerList create an insert statement
+      //insert data into your table
+      
+      //  REMEMBER SINGLE QUOTES AROUND VALUES EX. query = "insert into date_table (EPIC_ID) values('TruAmericanHero5')"
+      
+      
+      //Run Query Through Prepared Statement
+			/PreparedStatement prepStmt = (PreparedStatement) con.prepareStatement(query);
+		  //prepStmt.executeUpdate();
+				
+			
+			//String query = "insert into date_table (EPIC_ID) values('TruAmericanHero5')";
+			//PreparedStatement prepStmt = (PreparedStatement) con.prepareStatement(query);
+			//prepStmt.executeUpdate();
+			
+
+  */
+	
+
+	/*
+    printCurrentTop3
+    method to print the top3 highest values and their PlayerStats.ID for each statValue
+    
+    loop thru each stat and loop thru playerList get each PlayerStats item and Compare it to the others to rank the top3
+    
+    printf to make it pretty
+  
+  */
+	
+
+
+  /*
+    statsToText(String fileName)
+    playerName and all stats to a text file		
+		
+		
+	
+	   Main here
+   
+   */
